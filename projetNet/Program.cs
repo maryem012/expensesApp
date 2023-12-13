@@ -2,7 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using projetNet.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mgo + DSMBMAY9C3t2VlhiQlZPd0BDXHxLflFyVWBTfFh6dlJWACFaRnZdQVxhSHxSc0FjXXdacHNX"
+);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -27,6 +28,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
 
 app.Run();

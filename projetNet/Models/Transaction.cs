@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace projetNet.Models
 {
@@ -34,7 +35,7 @@ namespace projetNet.Models
         {
             get
             {
-                return ((Category == null || Category.Type == "Expense") ? "- " : "+ ") + Amount.ToString("C0");
+                return ((Category == null || Category.Type == "Expense") ? "- " : "+ ") + Amount.ToString("C0", new CultureInfo("fr-TN"));
             }
         }
 
